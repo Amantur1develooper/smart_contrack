@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Вопросы и ответы
+{% endblock title %}
+    
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-white "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+<li><a href="#" class="nav-link px-2 text-secondary"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'about_us' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+
+
+{% block content %}
+<style>
+    
+</style>
+<div class="container">
+  <h2>Задать вопрос</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="name">Ваше имя:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Ваш email:</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="question">Ваш вопрос:</label>
+      <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Главное
+{% endblock title %}
+    
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-white "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-secondary"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'about_us' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+    
+
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+    <div class="col">
+        <div class="card shadow-sm">
+            <img src="{% static 'img/dog.png' %}" alt="">
+    
+          <div class="card-body">
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">тип договора: Купля-продажа </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Вид" data-ch="0" data-type="trSpan" style="visibility: initial !important;">вид</ya-tr-span></button>
+                <a href="{% url 'dogovor' %}"><button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Edit" data-translation="Редактировать" data-ch="0" data-type="trSpan" style="visibility: initial !important;">Редактировать</ya-tr-span></button>
+                </a>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+        <div class="col">
+        <div class="card shadow-sm">
+            <img src="{% static 'img/dog.png' %}" alt="">
+            
+           
+          <div class="card-body">
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                тип договора: Подряда </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Вид" data-ch="0" data-type="trSpan" style="visibility: initial !important;">вид</ya-tr-span></button>
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Edit" data-translation="Редактировать" data-ch="0" data-type="trSpan" style="visibility: initial !important;">Редактировать</ya-tr-span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+          <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'img/dog.png' %}" alt="">
+          <div class="card-body">
+    
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                тип договора: Договор поставки </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Вид" data-ch="0" data-type="trSpan" style="visibility: initial !important;">вид</ya-tr-span></button>
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Edit" data-translation="Редактировать" data-ch="0" data-type="trSpan" style="visibility: initial !important;">Редактировать</ya-tr-span></button>
+              </div>
+            </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+    {% endblock content %}
+    

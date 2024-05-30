@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Главное
+{% endblock title %}
+    
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-secondary "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'about_us' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+    
+
+{% block content %}
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .headerr {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+      
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        
+        img {
+            max-width: 100%;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+        
+        .about {
+            padding: 20px;
+        }
+        
+        .call-to-action {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+    </style>
+    <header class="headerr">
+        <h1>Смарт-контракты: будущее права</h1>
+        <p>Как технология блокчейн трансформирует юридические практики</p>
+        <img src="{% static 'img/smart_contrakt.jpeg' %}" alt="Смарт-контракты и право">
+    </header>
+    <main>
+        <section class="about container">
+            <h2>О нас</h2>
+            <p>Наш сайт посвящен правовым аспектам смарт-контрактов. Здесь вы найдете...</p>
+            <ul>
+                <li>Обзоры и новости</li>
+                <li>Статьи и исследования</li>
+                <li>Практические руководства</li>
+                <li>Ресурсы и инструменты</li>
+            </ul>
+        </section>
+        <section class="call-to-action">
+            <h2>Присоединяйтесь к нам!</h2>
+            <p>Подпишитесь на рассылку, задайте вопрос эксперту или присоединяйтесь к сообществу.</p>
+            <a class="btn btn-primary btn-lg" href="#">Подписаться</a>
+            <a class="btn btn-primary btn-lg" href="#">Задать вопрос</a>
+            <a class="btn btn-primary btn-lg" href="#">Присоединиться</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Все права защищены</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Пример JavaScript кода для добавления функциональности
+
+// Подписка на рассылку
+const subscribeButton = document.querySelector('.subscribe-button');
+subscribeButton.addEventListener('click', () => {
+    // Обработать подписку на рассылку
+    alert('Спасибо за подписку!');
+});
+
+// Задать вопрос эксперту
+const askButton = document.querySelector('.ask-button');
+askButton.addEventListener('click', () => {
+    // Перенаправить на страницу с формой для вопроса
+    window.location.href = 'ask-question.html';
+});
+
+// Присоединиться к сообществу
+const joinButton = document.querySelector('.join-button');
+joinButton.addEventListener('click', () => {
+    // Перенаправить на страницу сообщества
+    window.location.href = 'community.html';
+});
+
+    </script>
+
+
+{% endblock content %}
+    

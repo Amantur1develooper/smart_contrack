@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-white "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'about_us' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+
+{% block title %}
+    Регистрация
+{% endblock title %}
+    
+
+{% block content %}
+<div class="container">
+    <div class="mt-4 my-auto gap-4 d-flex">
+        <a href="{% url 'register' %}"><h2 class="no-list">зарегистрироваться</h2> </a><img class="" style="height:100px ;" src="{% static 'img/tunduk.png' %}" alt="">
+</div>
+</div>
+{% endblock content %}

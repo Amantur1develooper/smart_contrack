@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-white "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-secondary"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'about_us' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+
+
+{% block content %}
+    
+{% if messages %}
+{% for message in messages %}
+    {% if message.tags == 'error' %}
+    <div  class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-300 dark:text-red-600" role="alert">
+        {{ message }}
+      </div>
+       
+    {% elif message.tags == 'warning' %}
+    <div  class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-500 dark:bg-yellow-300 dark:text-yellow-600" role="alert">
+        <span class="font-medium"></span> {{ message }}
+      </div>
+    {% elif message.tags == 'success' %}
+    <div class="p-4 mb-4 text-bold text-green-800 rounded-lg bg-green-50 dark:bg-green-300 dark:text-green-600" role="alert">
+        <span class="font-medium"></span> {{ message }}
+      </div>
+    {% else %}
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-green-300 dark:text-blue-600" role="alert">
+        <span class="font-medium"></span> {{ message }}
+      </div>
+     
+    {% endif %}
+{% endfor %}
+{% endif %}
+<style>
+    .co{
+        color: #111;
+    }
+</style>
+
+
+<ul>
+    {{cor_block}}
+    <div class="container">
+        <div class="row mt-4 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+    {% for block in cor_block %}
+    <div class="col" style="margin: 10px; border: 1px solid;padding: 10px;border-color: #b12525; background-color: #b12525;">
+        <div class="card shadow-sm" style="border-color: #b12525;">
+            <img src="{% static 'img/dog.png' %}" alt="">
+    
+          <div style="background-color: #b12525;" class="card-body bg-red-500">
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                контракт {{block.index}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                Покупатель{{block.buyer}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                {{block.timestamp}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Вид" data-ch="0" data-type="trSpan" style="visibility: initial !important;">вид</ya-tr-span></button>
+
+       
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+       
+</ul>
+<div class="container">
+    <div class="row mt-4 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+        {% for block in blocks %}
+    <div class="col">
+        <div class="card shadow-sm">
+            <img src="{% static 'img/dog.png' %}" alt="">
+    
+          <div class="card-body">
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                контракт {{block.index}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                Покупатель{{block.buyer}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p class="card-text"><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This is a wider card with supporting text below as a natural lead-in to additional content. " data-translation="Это более широкая карточка со вспомогательным текстом ниже, который естественным образом ведет к дополнительному контенту. " data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                {{block.timestamp}} </ya-tr-span><ya-tr-span data-index="5-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="This content is a little bit longer." data-translation="Этот контент немного длиннее." data-ch="0" data-type="trSpan" style="visibility: initial !important;">
+                </ya-tr-span></p>
+            <p></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"><ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Вид" data-ch="0" data-type="trSpan" style="visibility: initial !important;">вид</ya-tr-span></button>
+
+       
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+       
+          
+        </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+    

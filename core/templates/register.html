@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block navbar %}
+<li><a href="{% url 'main' %}" class="nav-link px-2  text-white "><ya-tr-span data-index="19-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Features" data-translation="Характеристики" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Главное</ya-tr-span></a></li>
+<li><a href="{% url 'dog' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Договора</ya-tr-span></a></li>
+<li><a href="{% url 'alldogovor' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="20-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Все Договора</ya-tr-span></a></li>
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="21-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="FAQs" data-translation="Вопросы и ответы" data-ch="1" data-type="trSpan" style="visibility: initial !important;">Вопросы и ответы</ya-tr-span></a></li>
+<li><a href="{% url 'q_answer' %}" class="nav-link px-2 text-white"><ya-tr-span data-index="22-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="About" data-translation="О нас" data-ch="1" data-type="trSpan" style="visibility: initial !important;">О нас</ya-tr-span></a></li>
+{% endblock navbar %}
+
+
+{% block title %}
+    Регистрация
+{% endblock title %}
+    
+
+{% block content %}
+<div class="container">
+<form action="{% url 'main' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %} <div class="mb-4 ">
+        <label for="">{{ form.email.label }}</label>
+        {{ form.email }}
+        {% for error in form.email.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4">
+        <label for="">{{ form.image.label }}</label>
+        {{ form.image }}
+        {% for error in form.image.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4 ">
+        <label for="">{{ form.idpassword.label }}</label>
+        {{ form.idpassword }}
+        {% for error in form.idpassword.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4 ">
+        <label for="">{{ form.firstname.label }}</label>
+        {{ form.firstname }}
+        {% for error in form.firstname.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4 ">
+        <label for="">{{ form.lastname.label }}</label>
+        {{ form.lastname }}
+        {% for error in form.lastname.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4 ">
+        <label for="">{{ form.phone.label }}</label>
+        {{ form.phone }}
+        {% for error in form.phone.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div class="mb-4 ">
+        <label for="">{{ form.password.label }}</label>
+        {{ form.password }}
+        {% for error in form.password.errors %}
+            <div class="mt-1 mb-2 text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    <div> {% endcomment %}
+        <button type="submit" class="btn btn-success w-100 d-block">Create</button>
+    </div>
+</form>
+</div>
+{% endblock content %}
